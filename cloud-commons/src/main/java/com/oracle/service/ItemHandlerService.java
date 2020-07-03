@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 //此注解说明与EUREKA-PROVIDER的服务进行映射， 这个里面的映射要和provider的映射对应上！！！
-@FeignClient("EUREKA-PROVIDER")
+@FeignClient(value = "EUREKA-PROVIDER",fallbackFactory = ItemFallBackFactory.class)//找不到EUREKA-PROVIDER，就服务降级就找fallbackFactory这个
 public interface ItemHandlerService {//当前的Item接口相当于EUREKA-PROVIDER服务，
 
     @GetMapping("item/get")

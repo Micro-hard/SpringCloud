@@ -20,7 +20,7 @@ public class OrderHandler {
 
     static int count=0;
 
-    //0701的,不用写一大堆了。和本地调用时一样的了
+    //0701feign的,不用写一大堆了。和本地调用时一样的了
     @Autowired
     ItemHandlerService itemHandlerService;
 
